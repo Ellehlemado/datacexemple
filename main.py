@@ -18,12 +18,12 @@ st.markdown("""
 
 def scrap(id,nb_page):
     df = pd.DataFrame()
+    data=[]
     for p in range(1,nb_page):
         url = f'https://dakarvente.com/index.php?page=annonces_categorie&id={id}&sort=&nb={p}'
         resp = get(url)
         soup = bs(resp.text,'html.parser')
         articles = soup.find_all('article', id = 'div-desktop')
-        data=[]
         for article in articles:
             try:
                 content_price = article.findAll('div', class_ = 'content-price')
