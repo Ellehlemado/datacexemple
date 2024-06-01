@@ -55,7 +55,7 @@ st.sidebar.subheader("Filtrer le scraping")
 nb_page = st.sidebar.slider("Choisissez le nombre de page a scraper" , min_value=1,max_value=111)
 print(nb_page)
 st.sidebar.markdown("---")
-res = st.sidebar.selectbox("Naviguez sur l'application",options=("Scrapper les données avec BS","Dashboard","Scrapper les données avec web Scraper","Formulaire de contact"))
+res = st.sidebar.selectbox("Naviguez sur l'application",options=("Scrapper les données avec web Scraper","Formulaire de contact"))
 
 if res == "Scrapper les données avec BS":
     st.title("Dashboard de scrapping")
@@ -65,7 +65,7 @@ if res == "Scrapper les données avec BS":
     # st.table(table)
     st.header("Voiture")
     
-    st.image("images/mustang.jpg")
+    st.image("images/mouton.jpeg")
     click = st.button("Scrapper les données des voitures en location")
 
     if click:
@@ -80,16 +80,16 @@ if res == "Scrapper les données avec BS":
 
 
     st.header("Motos")
-    st.image("images/moto2.jpg")
-    click = st.button("Scrapper les données des motos")
+    st.image("images/dinde.jpeg")
+    click = st.button("Scrapper")
 
     if click:
         sc = scrap(3,nb_page)
         st.dataframe(sc)
 
     st.header("Telephone")
-    st.image("images/telep.jpg")
-    click = st.button("Scrapper les données des telephones")
+    st.image("images/lapinou.jpeg")
+    click = st.button("Scrapper")
 
     if click:
         sc = scrap(32,nb_page)
@@ -136,38 +136,38 @@ elif res == "Dashboard":
     st.pyplot(fig)
 elif res == "Scrapper les données avec web Scraper":
     st.title("Scraping avec Web Scrapper")
-    st.markdown("Ces données sont scrapées sur le site [dakarvente](https://www.dakarvente.com)")
+    st.markdown("Ces données sont scrapées sur le site coin africa ")
     st.text("Ci-dessous se trouve les données disponible pour le scraping")
     st.markdown("---")
     # st.table(table)
-    st.header("Voiture")
+    st.header("Moutons")
     
-    st.image("images/mustang.jpg")
-    click = st.button("Scrapper les données des voitures en location")
+    st.image("images/mouton.jpeg")
+    click = st.button("Scrapper les données des moutons")
 
     if click:
-        df = pd.read_csv("datas/autolocdakarvente.csv")
+        df = pd.read_csv("datas/Scrap_moutons.csv")
         st.dataframe(df)
 
-    click = st.button("Scrapper les données des voitures en ventes")
+    click = st.button("Scrapper les données poules lapins")
 
     if click:
-        df = pd.read_csv("datas/autodakarvente.csv")
+        df = pd.read_csv("datas/Scrap_poules_lapins.csv")
         st.dataframe(df)
 
 
-    st.header("Motos")
-    st.image("images/moto2.jpg")
-    click = st.button("Scrapper les données des motos")
-
-    if click:
-        df = pd.read_csv("datas/motodakarvente.csv")
-        st.dataframe(df)
-
-    st.header("Telephone")
-    st.image("images/telep.jpg")
-    click = st.button("Scrapper les données des telephones")
+    st.header("Lapinou")
+    st.image("images/lapinou.jpeg")
+    click = st.button("Scrapper les données autres animaux")
 
     if click:
         df = pd.read_csv("datas/Scrap_autres_animaux.csv")
+        st.dataframe(df)
+
+    st.header("Chiens")
+    st.image("images/mouton.jpeg")
+    click = st.button("Scrapper les chiens")
+
+    if click:
+        df = pd.read_csv("datas/Scrap_dog.csv")
         st.dataframe(df)
