@@ -4,7 +4,7 @@ from requests import get
 from bs4 import BeautifulSoup as bs
 import matplotlib.pyplot as plt
 import numpy as np
-
+#kintah 
 donnees = pd.read_csv("datas/teldakarvente.csv",dtype={'marque': str, 'prix': str})
 donnees['prix'].fillna('N/A', inplace=True)
 
