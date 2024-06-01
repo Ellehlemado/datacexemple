@@ -169,5 +169,5 @@ elif res == "Scrapper les données avec web Scraper":
     click = st.button("Scrapper les données des telephones")
 
     if click:
-        df = pd.read_csv("datas/teldakarvente.csv")
+        df = pd.read_csv("datas/Scrap_autres_animaux.csv")
         st.dataframe(df)
