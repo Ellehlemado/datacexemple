@@ -4,6 +4,6 @@ requests
 scipy
 matplotlib
 pandas
-streamlite
+streamlit
 seaborn
 pybase64
