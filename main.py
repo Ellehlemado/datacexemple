@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup as bs
 import matplotlib.pyplot as plt
 import numpy as np
 #kintah 
-donnees = pd.read_csv("datas/teldakarvente.csv",dtype={'marque': str, 'prix': str})
-donnees['prix'].fillna('N/A', inplace=True)
+donnees = pd.read_csv("datas/Scrap_autres_animaux.csv",dtype={'name': str, 'adress': str})
+donnees['name'].fillna('N/A', inplace=True)
 
 st.markdown("""
 <style>
